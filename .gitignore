@@ -1,3 +1,5 @@
-// The "main.exe" is ignored by git.
+# The "main.exe" is ignored by git.
 
 main.exe
+build/
+*.o
