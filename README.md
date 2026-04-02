@@ -1,29 +1,35 @@
 
-# ATM - Automated Teller Machine
+# ATM - 自动取款机
 
-The Project name is "ATM -  Automated Teller Machine", and this project is for beginners.
+本项目名为 `ATM - Automated Teller Machine`，这是一个面向初学者的练手项目。
 
-## What is ATM?
-An automated teller machine (ATM) is an electronic banking outlet that allows customers to complete basic transactions without the aid of a branch representative or teller. Anyone with a credit or debit card can access cash at most ATMs.
+## 什么是 ATM？
+自动取款机（ATM，Automated Teller Machine）是一种电子银行终端，用户无需银行柜员协助，就可以完成一些基础交易。任何持有信用卡或借记卡的人，通常都可以通过大多数 ATM 提取现金。
 
-## About Project:
+## 项目简介
 
-In this Project there are 5 options given to the user, first is "Check Balance", the second is "Withdrawn Amount", the third is "Fast Cash", the fourth is "Deposit Amount" and the last one is Exit from this Program. 
+在这个项目中，为用户提供了 5 个功能选项：
 
-to run this program you have to enter your first name, last name, and email address, and then you have to create a 4-digit PIN. After signing up you have to log in with your email address and 4-digit PIN and then you can easily Deposit the Amount and Withdraw the Amount with the help of the manual and fast cash option.
+- 查询余额（`Check Balance`）
+- 提取金额（`Withdrawn Amount`）
+- 快速取现（`Fast Cash`）
+- 存入金额（`Deposit Amount`）
+- 退出程序（`Exit`）
 
-## NOTE
-This project is for absolute newbies who just started their programming journey in C++. Those who want to start with the Open Source can begin their journey with this project.
+运行该程序时，你需要先输入名字、姓氏和邮箱地址，然后创建一个 4 位 PIN 码。注册完成后，你需要使用邮箱地址和 4 位 PIN 码登录。登录之后，你就可以根据程序提示，通过普通取款和快速取现等功能进行存款和取款操作。
 
-## How to Start Contribution
-- Step 1: Fork the project.
-- Step 2: Clone the project in your local machine.
-- Step 3: Create a new branch and start your contribution.
-- Step 4: Push the updated files from your created branch.
-- Step 5: Create a Pull Request (PR). 
+## 注意
+这个项目适合刚开始学习 C++ 编程的零基础新手。如果你想通过一个简单项目开始接触开源贡献，也可以从这个项目开始。
 
-## Contributors
-Thanks to everyone for all your contributions.
+## 如何开始贡献
+- 第 1 步：Fork 本项目
+- 第 2 步：将项目克隆到本地
+- 第 3 步：创建一个新分支并开始你的贡献
+- 第 4 步：将更新后的文件推送到你创建的分支
+- 第 5 步：创建 Pull Request（PR）
+
+## 贡献者
+感谢所有为本项目做出贡献的人。
 
 <a href="https://github.com/soravkumarsharma/ATM-Project-for-Beginners/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=soravkumarsharma/ATM-Project-for-Beginners" />
