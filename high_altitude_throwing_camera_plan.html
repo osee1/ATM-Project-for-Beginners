@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>40层小区高空抛物监控采购和自安装方案</title>
+  <style>
+    :root {
+      --bg: #f6f7f9;
+      --paper: #fff;
+      --ink: #20242a;
+      --muted: #5e6875;
+      --line: #d9dee7;
+      --accent: #0f766e;
+      --blue: #1d4ed8;
+      --soft: #eef8f6;
+      --warn: #fff7ed;
+      --warn-line: #fed7aa;
+      --bad: #fef2f2;
+      --bad-line: #fecaca;
+      --shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+    a { color: var(--blue); text-decoration: none; word-break: break-all; }
+    a:hover { text-decoration: underline; }
+    .page { max-width: 1180px; margin: 0 auto; padding: 32px 20px 56px; }
+    .hero, .section {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 28px;
+      margin-bottom: 18px;
+    }
+    .hero { box-shadow: var(--shadow); }
+    .eyebrow { margin: 0 0 8px; color: var(--accent); font-weight: 700; }
+    h1 { margin: 0 0 12px; font-size: 34px; line-height: 1.25; }
+    h2 { margin: 0 0 14px; font-size: 25px; line-height: 1.35; }
+    h3 { margin: 22px 0 10px; font-size: 20px; line-height: 1.35; }
+    p { margin: 10px 0; }
+    ul, ol { margin: 10px 0 16px 24px; padding: 0; }
+    li { margin: 5px 0; }
+    code {
+      padding: 2px 5px;
+      border-radius: 4px;
+      background: #eef2f7;
+      font-family: Consolas, "SFMono-Regular", Menlo, monospace;
+      font-size: 0.92em;
+    }
+    pre {
+      overflow-x: auto;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #111827;
+      color: #f9fafb;
+      line-height: 1.6;
+    }
+    pre code { padding: 0; background: transparent; color: inherit; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0 22px;
+      background: var(--paper);
+    }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 10px 12px;
+      vertical-align: top;
+      text-align: left;
+    }
+    th { background: #eef2f7; font-weight: 700; }
+    .callout {
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--accent);
+      border-radius: 8px;
+      background: var(--soft);
+      padding: 14px 16px;
+      margin: 14px 0;
+    }
+    .warning { border-color: var(--warn-line); border-left-color: #f97316; background: var(--warn); }
+    .bad { border-color: var(--bad-line); border-left-color: #dc2626; background: var(--bad); }
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .meta div { border: 1px solid var(--line); border-radius: 8px; background: #fbfcfe; padding: 12px 14px; }
+    .meta span { display: block; color: var(--muted); font-size: 13px; }
+    .meta strong { display: block; margin-top: 3px; }
+    .toc { columns: 2; column-gap: 36px; }
+    .tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: #e0f2fe;
+      color: #075985;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .price { white-space: nowrap; font-weight: 700; }
+    @media (max-width: 820px) {
+      .page { padding: 18px 12px 36px; }
+      .hero, .section { padding: 18px; }
+      h1 { font-size: 26px; }
+      h2 { font-size: 22px; }
+      .meta { grid-template-columns: 1fr; }
+      .toc { columns: 1; }
+      table { display: block; overflow-x: auto; white-space: nowrap; }
+    }
+    @media print {
+      body { background: #fff; }
+      .page { max-width: none; padding: 0; }
+      .hero, .section { box-shadow: none; break-inside: avoid; }
+      a { color: #000; text-decoration: underline; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <p class="eyebrow">高空抛物监控采购方案</p>
+      <h1>40层小区单面楼体监控采购和自安装方案</h1>
+      <p>面向预算1000-4000元、只监控楼的一面、需要室外稳定使用、手机远程查看，并尽量自己安装的场景。</p>
+      <div class="meta">
+        <div><span>生成日期</span><strong>2026-04-23</strong></div>
+        <div><span>预算目标</span><strong>1000-4000元</strong></div>
+        <div><span>最推荐</span><strong>TP-LINK 800万双目一体机</strong></div>
+      </div>
+    </header>
+
+    <section class="section" id="toc">
+      <h2>目录</h2>
+      <ol class="toc">
+        <li><a href="#conclusion">先给结论</a></li>
+        <li><a href="#price-note">价格和链接说明</a></li>
+        <li><a href="#plans">方案清单</a></li>
+        <li><a href="#ranking">推荐排序</a></li>
+        <li><a href="#install">自己安装教程</a></li>
+        <li><a href="#params">关键参数</a></li>
+        <li><a href="#pitfalls">容易踩坑</a></li>
+        <li><a href="#privacy">合规和隐私</a></li>
+        <li><a href="#final-buy">最终购买建议</a></li>
+      </ol>
+    </section>
+
+    <section class="section" id="conclusion">
+      <h2>先给结论</h2>
+      <div class="callout">
+        <p><strong>最推荐买：方案二，TP-LINK <code>TL-NIPC58A2P-WBP</code> 800万双目一体机方案。</strong></p>
+        <p>如果这台报价太高，再买方案三，大华单800万变焦方案。</p>
+      </div>
+      <p>你只监控楼的一面，不需要覆盖多面楼体，所以优先减少摄像机数量和施工量。40层楼大约有100-120米高度，普通家用摄像机不够用，但一台高空抛物专用800万双目/变焦摄像机已经可以作为主方案。双400万分段拍仍然更稳，但属于增强取证方案，不是最低成本首选。</p>
+      <h3>自己安装能不能做</h3>
+      <table>
+        <thead>
+          <tr><th>场景</th><th>能否自己做</th><th>难度</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>摄像机装在一楼外墙、岗亭、围墙、车棚、立杆等低处，只需要打孔和拉网线</td><td>可以自己做</td><td>3/5</td></tr>
+          <tr><td>摄像机装在室外低处，但需要走100米左右室外网线、穿管、防水</td><td>可以自己做，但要耐心</td><td>3.5/5</td></tr>
+          <tr><td>需要爬楼外墙、从窗外伸手固定、在高处打孔、楼顶边缘作业</td><td>不建议自己做</td><td>5/5</td></tr>
+          <tr><td>只做NVR、硬盘、App绑定、参数设置</td><td>很适合自己做</td><td>2/5</td></tr>
+        </tbody>
+      </table>
+      <div class="callout warning">
+        <p><strong>重要提醒：</strong>高空抛物监控不是把摄像头装在40楼往下看，而是通常装在楼前地面/低层位置，向上拍整栋楼外立面。如果你的安装点必须高空作业，别自己上，找物业或弱电师傅做固定和走线，你自己负责选型、调试、手机绑定即可。</p>
+      </div>
+    </section>
+
+    <section class="section" id="price-note">
+      <h2>价格和链接说明</h2>
+      <p>京东价格会随地区、店铺、活动、库存实时变化。下面单价是2026-04-23按京东/公开渠道搜索得到的估算区间，最终以你打开京东页面后的实时价格为准。</p>
+      <p>有些高空抛物专用摄像机是工程渠道型号，京东商品页可能经常换链接，所以这里给的是京东精确搜索链接。打开后优先选京东自营、品牌旗舰店、品牌授权店；标题明确写“高空抛物”“轨迹”“AI检测”；可开发票、可退换；下单前问客服确认焦距和功能。</p>
+    </section>
+
+    <section class="section" id="jd-exact">
+      <h2>精确京东单品页版</h2>
+      <p>你这次提的要求是对的：购买入口要尽量是能直接打开商品详情页的 <code>item.jd.com/xxxx.html</code>，而不是搜索页。</p>
+      <p>所以这一版我单独列出一套只保留精确京东单品页的清单。这里优先保留我已经明确检索到、能直接打开到商品详情页的链接。</p>
+      <div class="callout warning">
+        <p><strong>说明：</strong><code>TP-LINK TL-NIPC58A2P-WBP</code>、<code>TL-NIPC5484P-WBP</code> 这两个工程型号，我这边没有稳定检索到公开的京东单品页，所以不再把它们当“精确京东链接版”的主采购入口。如果你要求所有核心物品都必须能直接打开京东商品详情页，当前更适合优先买海康 / 大华这两套。</p>
+      </div>
+
+      <h3>精确方案A：海康单机版，单面楼体首推</h3>
+      <p>适合：只监控一面楼、想少装一个点位、并且要求核心链接都能直达京东商品页。</p>
+      <p>预计总价：<span class="price">约2600-3800元</span>。</p>
+      <table>
+        <thead>
+          <tr><th>物品</th><th>数量</th><th>精确京东单品页</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>海康威视 <code>DS-2CD3T86WDA-PW</code> 800万高空抛物摄像机</td><td>1</td><td><a href="https://item.jd.com/100027073289.html">https://item.jd.com/100027073289.html</a></td></tr>
+          <tr><td>海康威视 <code>DS-7804N-Q1/4P</code> 4路PoE硬盘录像机</td><td>1</td><td><a href="https://item.jd.com/100035153059.html">https://item.jd.com/100035153059.html</a></td></tr>
+          <tr><td>希捷 <code>ST4000VX013</code> 4TB监控硬盘</td><td>1</td><td><a href="https://item.jd.com/10039449437175.html">https://item.jd.com/10039449437175.html</a></td></tr>
+          <tr><td>海康威视 <code>DS-1292ZJ</code> 壁装全铝支架</td><td>1</td><td><a href="https://item.jd.com/100066782214.html">https://item.jd.com/100066782214.html</a></td></tr>
+          <tr><td>监控防水过路盒/接线盒</td><td>2</td><td><a href="https://item.jd.com/10089337325372.html">https://item.jd.com/10089337325372.html</a></td></tr>
+          <tr><td>秋叶原 <code>QS2636AT305</code> 六类网线 305米箱线</td><td>1箱</td><td><a href="https://item.jd.com/100050182576.html">https://item.jd.com/100050182576.html</a></td></tr>
+          <tr><td>PVC线管 25mm 100米</td><td>1卷</td><td><a href="https://item.jd.com/10107949987450.html">https://item.jd.com/10107949987450.html</a></td></tr>
+          <tr><td>绿联网线钳</td><td>1</td><td><a href="https://item.jd.com/10040594714596.html">https://item.jd.com/10040594714596.html</a></td></tr>
+          <tr><td>精明鼠 <code>NF-8209S</code> 寻线/测线工具</td><td>1</td><td><a href="https://item.jd.com/10065787095149.html">https://item.jd.com/10065787095149.html</a></td></tr>
+          <tr><td>山泽 <code>XWJ6010U</code> 六类水晶头</td><td>1包</td><td><a href="https://item.jd.com/100013910163.html">https://item.jd.com/100013910163.html</a></td></tr>
+        </tbody>
+      </table>
+      <p>这套为什么现在更适合你：核心摄像机、NVR、硬盘都能直接点进京东单品页；你只看一面楼，单机800万高空抛物机更省安装量；同品牌摄像机和NVR兼容性更稳。</p>
+
+      <h3>精确方案B：大华单机版，预算更低</h3>
+      <p>适合：你还是想把预算压低一点，同时购买入口尽量都要是直达商品页。</p>
+      <p>预计总价：<span class="price">约2300-3400元</span>。</p>
+      <table>
+        <thead>
+          <tr><th>物品</th><th>数量</th><th>精确京东单品页</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>大华 <code>DH-IPC-HFW4843K-ZAS-I4-TGD</code> 800万高空抛物摄像机</td><td>1</td><td><a href="https://item.jd.com/10093128551349.html">https://item.jd.com/10093128551349.html</a></td></tr>
+          <tr><td>大华 <code>DH-NVR4104HS-P-HDS3/I</code> 4路PoE硬盘录像机</td><td>1</td><td><a href="https://item.jd.com/100154911881.html">https://item.jd.com/100154911881.html</a></td></tr>
+          <tr><td>希捷 <code>ST4000VX013</code> 4TB监控硬盘</td><td>1</td><td><a href="https://item.jd.com/10039449437175.html">https://item.jd.com/10039449437175.html</a></td></tr>
+          <tr><td>监控防水过路盒/接线盒</td><td>2</td><td><a href="https://item.jd.com/10089337325372.html">https://item.jd.com/10089337325372.html</a></td></tr>
+          <tr><td>监控支架</td><td>1</td><td><a href="https://item.jd.com/10056419060952.html">https://item.jd.com/10056419060952.html</a></td></tr>
+          <tr><td>秋叶原 <code>QS2636AT305</code> 六类网线 305米箱线</td><td>1箱</td><td><a href="https://item.jd.com/100050182576.html">https://item.jd.com/100050182576.html</a></td></tr>
+          <tr><td>PVC线管 25mm 100米</td><td>1卷</td><td><a href="https://item.jd.com/10107949987450.html">https://item.jd.com/10107949987450.html</a></td></tr>
+          <tr><td>绿联网线钳</td><td>1</td><td><a href="https://item.jd.com/10040594714596.html">https://item.jd.com/10040594714596.html</a></td></tr>
+          <tr><td>精明鼠 <code>NF-8209S</code> 寻线/测线工具</td><td>1</td><td><a href="https://item.jd.com/10065787095149.html">https://item.jd.com/10065787095149.html</a></td></tr>
+          <tr><td>山泽 <code>XWJ6010U</code> 六类水晶头</td><td>1包</td><td><a href="https://item.jd.com/100013910163.html">https://item.jd.com/100013910163.html</a></td></tr>
+        </tbody>
+      </table>
+      <p>说明：这台大华摄像机的京东单品页我已经确认是你截图里那种商品详情页；大华4路PoE录像机这个链接我也单独整理进来了。如果你打开后发现某个版本临时下架，优先保留同型号同页的其他规格，不要换成普通监控枪机。</p>
+
+      <h3>我现在给你的直接购买建议</h3>
+      <ol>
+        <li>如果你的原则是“核心设备都要尽量是精确京东单品页”，优先买精确方案A，也就是海康单机版。</li>
+        <li>如果你更想省钱，就买精确方案B，也就是大华单机版。</li>
+        <li>TP-LINK 那两套我不删结论，但在“精确京东链接”这个条件下，先不作为主买入口。</li>
+      </ol>
+    </section>
+
+    <section class="section" id="plans">
+      <h2>方案清单</h2>
+      <h3>方案一：TP-LINK双400万高空抛物专用方案，增强取证</h3>
+      <p><span class="tag">增强取证</span></p>
+      <p>适合：只监控一面楼，但你希望低层和高层都更清楚，预算也能接受接近4000元。</p>
+      <p>预计总价：<span class="price">约3500-3980元</span>。推荐指数：<strong>4.5/5，效果稳但施工多一点</strong>。</p>
+      <table>
+        <thead>
+          <tr><th>物品</th><th>数量</th><th>单价估算</th><th>小计估算</th><th>京东链接</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>TP-LINK <code>TL-NIPC5484P-WBP</code> 400万高空抛物摄像机，建议买4mm焦距</td><td>1</td><td>约1099元</td><td>约1099元</td><td><a href="https://search.jd.com/Search?keyword=TP-LINK%20TL-NIPC5484P-WBP%204mm">京东搜索</a></td></tr>
+          <tr><td>TP-LINK <code>TL-NIPC5484P-WBP</code> 400万高空抛物摄像机，建议买12mm焦距</td><td>1</td><td>约1099元</td><td>约1099元</td><td><a href="https://search.jd.com/Search?keyword=TP-LINK%20TL-NIPC5484P-WBP%2012mm">京东搜索</a></td></tr>
+          <tr><td>TP-LINK <code>TL-NVR6104K-L4P</code> 4路PoE网络硬盘录像机</td><td>1</td><td>约300-450元</td><td>约300-450元</td><td><a href="https://search.jd.com/Search?keyword=TL-NVR6104K-L4P">京东搜索</a></td></tr>
+          <tr><td>4TB监控硬盘，西部数据紫盘/希捷酷鹰</td><td>1</td><td>约450-650元</td><td>约450-650元</td><td><a href="https://search.jd.com/Search?keyword=4TB%20%E7%9B%91%E6%8E%A7%E7%A1%AC%E7%9B%98%20%E8%A5%BF%E6%95%B0%E7%B4%AB%E7%9B%98%20%E5%B8%8C%E6%8D%B7%E9%85%B7%E9%B9%B0">京东搜索</a></td></tr>
+          <tr><td>室外六类网线，100米，纯铜或无氧铜优先</td><td>1</td><td>约160-260元</td><td>约160-260元</td><td><a href="https://search.jd.com/Search?keyword=%E5%AE%A4%E5%A4%96%E5%85%AD%E7%B1%BB%E7%BD%91%E7%BA%BF%20100%E7%B1%B3">京东搜索</a></td></tr>
+          <tr><td>室外监控防水接线盒</td><td>2</td><td>约15-30元</td><td>约30-60元</td><td><a href="https://search.jd.com/Search?keyword=%E7%9B%91%E6%8E%A7%E9%98%B2%E6%B0%B4%E6%8E%A5%E7%BA%BF%E7%9B%92%20%E5%AE%A4%E5%A4%96">京东搜索</a></td></tr>
+          <tr><td>摄像机支架、膨胀螺丝、线管、管卡、防水胶带、扎带</td><td>1批</td><td>约100-250元</td><td>约100-250元</td><td><a href="https://search.jd.com/Search?keyword=%E7%9B%91%E6%8E%A7%E6%94%AF%E6%9E%B6%20%E7%BA%BF%E7%AE%A1%20%E9%98%B2%E6%B0%B4%E8%83%B6%E5%B8%A6">京东搜索</a></td></tr>
+          <tr><td>网线钳、测线仪、六类水晶头，家里没有工具再买</td><td>1套</td><td>约80-150元</td><td>约80-150元</td><td><a href="https://search.jd.com/Search?keyword=%E7%BD%91%E7%BA%BF%E9%92%B3%20%E6%B5%8B%E7%BA%BF%E4%BB%AA%20%E6%B0%B4%E6%99%B6%E5%A4%B4">京东搜索</a></td></tr>
+          <tr><td>PoE网口防雷器，室外长线建议买</td><td>2</td><td>约35-70元</td><td>约70-140元</td><td><a href="https://search.jd.com/Search?keyword=PoE%E9%98%B2%E9%9B%B7%E5%99%A8%20%E7%BD%91%E7%BB%9C%E9%98%B2%E9%9B%B7%E5%99%A8">京东搜索</a></td></tr>
+        </tbody>
+      </table>
+      <p><strong>为什么这样配：</strong>双机不是必须，但低层和高层能分别拍清楚。4mm负责低中层，12mm盯中高层和高层，PoE NVR负责稳定供电、录像和手机远程。</p>
+      <p><strong>优点：</strong>覆盖40层比单摄像头稳；同品牌兼容性好；两台分段拍摄，高层物体不会被压得太小；后期可再加摄像机。</p>
+      <p><strong>缺点：</strong>施工比单摄像头多一根网线、多一个安装点；只监控一面楼时，这个成本不一定必须花；第一次调角度可能需要半天。</p>
+      <pre><code>下单前问客服：
+我要监控40层小区高空抛物，请确认这个型号支持高空抛物检测、轨迹绘制/轨迹记录、事件录像检索，并且可以用手机App远程查看回放。
+我要一台4mm、一台12mm，不要默认随机焦距。
+这个摄像机接TL-NVR6104K-L4P后，高空抛物事件能不能在NVR里检索和回放？
+室外安装是否支持防水，防护等级是多少？</code></pre>
+
+      <h3>方案二：TP-LINK 800万双目一体机方案，单面楼体首推</h3>
+      <p><span class="tag">单面首推</span></p>
+      <p>适合：只监控一面楼、想少打孔少拉线、希望一台设备覆盖整面楼体。</p>
+      <p>预计总价：<span class="price">约3700-4300元</span>，如果摄像机单价超过2800元，很容易超4000。推荐指数：<strong>5/5，价格合适就优先买它</strong>。</p>
+      <table>
+        <thead>
+          <tr><th>物品</th><th>数量</th><th>单价估算</th><th>小计估算</th><th>京东链接</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>TP-LINK <code>TL-NIPC58A2P-WBP</code> 800万双目超广角高空抛物网络摄像机</td><td>1</td><td>约2600-3200元，工程渠道价格波动大</td><td>约2600-3200元</td><td><a href="https://search.jd.com/Search?keyword=TL-NIPC58A2P-WBP">京东搜索</a></td></tr>
+          <tr><td>TP-LINK <code>TL-NVR6104K-L4P</code> 4路PoE网络硬盘录像机</td><td>1</td><td>约300-450元</td><td>约300-450元</td><td><a href="https://search.jd.com/Search?keyword=TL-NVR6104K-L4P">京东搜索</a></td></tr>
+          <tr><td>4TB监控硬盘，西部数据紫盘/希捷酷鹰</td><td>1</td><td>约450-650元</td><td>约450-650元</td><td><a href="https://search.jd.com/Search?keyword=4TB%20%E7%9B%91%E6%8E%A7%E7%A1%AC%E7%9B%98%20%E8%A5%BF%E6%95%B0%E7%B4%AB%E7%9B%98%20%E5%B8%8C%E6%8D%B7%E9%85%B7%E9%B9%B0">京东搜索</a></td></tr>
+          <tr><td>室外六类网线，50-100米，看现场距离</td><td>1</td><td>约100-260元</td><td>约100-260元</td><td><a href="https://search.jd.com/Search?keyword=%E5%AE%A4%E5%A4%96%E5%85%AD%E7%B1%BB%E7%BD%91%E7%BA%BF">京东搜索</a></td></tr>
+          <tr><td>防水盒、支架、线管、防水胶带、网线工具</td><td>1批</td><td>约180-350元</td><td>约180-350元</td><td><a href="https://search.jd.com/Search?keyword=%E7%9B%91%E6%8E%A7%E5%AE%89%E8%A3%85%E8%BE%85%E6%9D%90%20%E9%98%B2%E6%B0%B4%E7%9B%92%20%E7%BD%91%E7%BA%BF%E9%92%B3">京东搜索</a></td></tr>
+        </tbody>
+      </table>
+      <p><strong>为什么这样配：</strong><code>TL-NIPC58A2P-WBP</code> 是双目超广角高空抛物机，一台设备拼接出更大的楼体画面。只看一面楼时，它的安装量和覆盖范围最匹配：一台摄像机、一根网线、一个安装点。</p>
+      <p><strong>优点：</strong>只需要安装一台摄像机；布线和打孔更少；双目拼接适合整栋楼外立面；TP-LINK官方资料明确定位为高空抛物场景。</p>
+      <p><strong>缺点：</strong>价格不稳定；一台看40层楼时，高层小物体细节仍可能不如两台分段拍；工程渠道型号下单前要确认售后和退换。</p>
+      <p><strong>什么时候选它：</strong>现场只想装一个摄像机位置，并且摄像机单价不超过2600-2800元。如果报价超过3000元，整套很容易超过4000元，这时改看方案三。</p>
+
+      <h3>方案三：大华单800万变焦高空抛物方案，单面低成本</h3>
+      <p><span class="tag">低成本</span></p>
+      <p>适合：只监控一面楼、预算更紧、想先用一台设备把系统搭起来。</p>
+      <p>预计总价：<span class="price">约2300-3200元</span>。推荐指数：<strong>4/5，性价比高但取证稳定性弱于方案二/方案一</strong>。</p>
+      <table>
+        <thead>
+          <tr><th>物品</th><th>数量</th><th>单价估算</th><th>小计估算</th><th>京东链接</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>大华 <code>DH-IPC-HFW4843K-ZAS-I4-TGD</code> 800万高空抛物枪型网络摄像机，优先选变焦款</td><td>1</td><td>约1050-1600元</td><td>约1050-1600元</td><td><a href="https://item.jd.com/10093128551349.html">京东商品/搜索</a></td></tr>
+          <tr><td>大华4路PoE NVR，例：NVR2104HS-P系列或同级4K PoE录像机</td><td>1</td><td>约300-550元</td><td>约300-550元</td><td><a href="https://search.jd.com/Search?keyword=%E5%A4%A7%E5%8D%8E%204%E8%B7%AF%20PoE%20NVR%204K">京东搜索</a></td></tr>
+          <tr><td>4TB监控硬盘，西部数据紫盘/希捷酷鹰</td><td>1</td><td>约450-650元</td><td>约450-650元</td><td><a href="https://search.jd.com/Search?keyword=4TB%20%E7%9B%91%E6%8E%A7%E7%A1%AC%E7%9B%98%20%E5%B8%8C%E6%8D%B7%E9%85%B7%E9%B9%B0%20%E8%A5%BF%E6%95%B0%E7%B4%AB%E7%9B%98">京东搜索</a></td></tr>
+          <tr><td>室外六类网线，50-100米</td><td>1</td><td>约100-260元</td><td>约100-260元</td><td><a href="https://search.jd.com/Search?keyword=%E5%AE%A4%E5%A4%96%E5%85%AD%E7%B1%BB%E7%BD%91%E7%BA%BF">京东搜索</a></td></tr>
+          <tr><td>防水盒、支架、线管、防水胶带、网线工具</td><td>1批</td><td>约180-350元</td><td>约180-350元</td><td><a href="https://search.jd.com/Search?keyword=%E7%9B%91%E6%8E%A7%E5%AE%89%E8%A3%85%E8%BE%85%E6%9D%90%20%E9%98%B2%E6%B0%B4%E7%9B%92">京东搜索</a></td></tr>
+        </tbody>
+      </table>
+      <p><strong>为什么这样配：</strong>大华这类高空抛物枪机价格相对低，变焦款可以现场调焦距。先把画面调到能覆盖整面楼，再根据高层清晰度微调焦距。</p>
+      <p><strong>优点：</strong>总价低；适合只监控一面楼的低成本方案；800万分辨率高；变焦款现场适应性比固定焦距好。</p>
+      <p><strong>缺点：</strong>单台覆盖40层仍然不如双目一体机或双机分段稳；夜间和小物体更吃力；需要确认具体型号支持高空抛物轨迹/事件检索。</p>
+
+      <h3>方案四：海康双400万高空抛物方案，偏工程稳定</h3>
+      <p><span class="tag">工程路线</span></p>
+      <p>适合：当地商家容易买到海康、物业已有海康设备、你想要更传统工程监控路线。</p>
+      <p>预计总价：<span class="price">约3000-4000元</span>。推荐指数：<strong>4/5，前提是买到明确支持轨迹的型号</strong>。</p>
+      <table>
+        <thead>
+          <tr><th>物品</th><th>数量</th><th>单价估算</th><th>小计估算</th><th>京东链接</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>海康威视 <code>DS-2CD3T47WDA-PW</code> 400万高空抛物筒机，建议一台4mm/6mm</td><td>1</td><td>约800-1100元</td><td>约800-1100元</td><td><a href="https://search.jd.com/Search?keyword=DS-2CD3T47WDA-PW">京东搜索</a></td></tr>
+          <tr><td>海康威视 <code>DS-2CD3T47WDA-PW</code> 400万高空抛物筒机，建议一台8mm/12mm</td><td>1</td><td>约800-1100元</td><td>约800-1100元</td><td><a href="https://search.jd.com/Search?keyword=DS-2CD3T47WDA-PW%208mm%2012mm">京东搜索</a></td></tr>
+          <tr><td>海康4路PoE NVR，例：<code>DS-7804N-Q1/4P</code> 或同级4路PoE录像机</td><td>1</td><td>约350-600元</td><td>约350-600元</td><td><a href="https://search.jd.com/Search?keyword=DS-7804N-Q1%2F4P">京东搜索</a></td></tr>
+          <tr><td>4TB监控硬盘，西部数据紫盘/希捷酷鹰</td><td>1</td><td>约450-650元</td><td>约450-650元</td><td><a href="https://search.jd.com/Search?keyword=4TB%20%E7%9B%91%E6%8E%A7%E7%A1%AC%E7%9B%98%20%E8%A5%BF%E6%95%B0%E7%B4%AB%E7%9B%98%20%E5%B8%8C%E6%8D%B7%E9%85%B7%E9%B9%B0">京东搜索</a></td></tr>
+          <tr><td>室外六类网线、支架、防水盒、线管、工具、防雷器</td><td>1批</td><td>约300-600元</td><td>约300-600元</td><td><a href="https://search.jd.com/Search?keyword=%E7%9B%91%E6%8E%A7%E5%AE%89%E8%A3%85%E8%BE%85%E6%9D%90%20%E5%AE%A4%E5%A4%96%E7%BD%91%E7%BA%BF%20%E9%98%B2%E9%9B%B7">京东搜索</a></td></tr>
+        </tbody>
+      </table>
+      <p><strong>为什么这样配：</strong>海康 <code>DS-2CD3T47WDA-PW</code> 官方定位里有高空抛物事件、轨迹记录、隐私遮蔽等能力，适合做工程取证。双机分段思路和方案一一样。</p>
+      <p><strong>优点：</strong>工程生态成熟；NVR、摄像机、App、售后网点多；如果物业已有海康平台，接入更方便。</p>
+      <p><strong>缺点：</strong>京东上同型号、相近型号很多，容易买错；新手配置可能比TP-LINK稍复杂；下单前必须确认高空抛物轨迹和事件回放。</p>
+      <pre><code>下单前问客服：
+请确认这个不是普通400万筒机，而是支持高空抛物事件检测和轨迹记录的DS-2CD3T47WDA-PW。
+请确认接DS-7804N-Q1/4P后，NVR和手机端可以检索高空抛物事件并回放。
+请确认焦距，不要发错成普通4mm。</code></pre>
+    </section>
+
+    <section class="section" id="ranking">
+      <h2>推荐排序</h2>
+      <table>
+        <thead>
+          <tr><th>排名</th><th>方案</th><th>适合程度</th><th>说明</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>方案二：TP-LINK 800万双目</td><td>最高</td><td>只看一面楼时最省安装点，覆盖整面楼体更合适。</td></tr>
+          <tr><td>2</td><td>方案三：大华单800万</td><td>高</td><td>成本低，适合先做单面监控，但要确认轨迹功能。</td></tr>
+          <tr><td>3</td><td>方案一：TP-LINK双400万</td><td>高</td><td>取证更稳，但多一个摄像机和安装点。</td></tr>
+          <tr><td>4</td><td>方案四：海康双400万</td><td>中高</td><td>工程稳定，但新手买错型号和配置复杂度更高。</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section" id="install">
+      <h2>自己安装教程</h2>
+      <h3>第一步：现场测量和选安装点</h3>
+      <ol>
+        <li>站在楼前，找一个能完整看到楼体外立面的地方，例如一楼外墙、门岗、围墙、车棚、立杆。</li>
+        <li>尽量让摄像机离楼体10-25米，不要太近。太近会仰角过大，高层画面变形严重。</li>
+        <li>避开树、晾衣杆、空调外机密集遮挡、路灯直射、广告牌。</li>
+        <li>不要隔着玻璃拍，夜间会反光，红外灯也会打回玻璃。</li>
+        <li>先用手机在预计安装点拍一张照片，确认整栋楼外立面都在画面内。</li>
+      </ol>
+      <p>只监控一面楼时，优先把一台摄像机装在这面楼的正前方或斜前方，尽量让楼体外立面完整进入画面。单摄像机方案先让画面覆盖1-40层，再检查高层是否足够清楚；如果高层太小，再考虑加第二台分段拍。</p>
+
+      <h3>双摄像机角度建议</h3>
+      <table>
+        <thead>
+          <tr><th>摄像机</th><th>焦距</th><th>主要负责</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>低中层摄像机</td><td>4mm或6mm</td><td>1-20层左右</td></tr>
+          <tr><td>中高层摄像机</td><td>12mm，现场距离远可考虑16mm</td><td>15-40层左右</td></tr>
+        </tbody>
+      </table>
+      <p>两台画面要有重叠区域，不要刚好断开。比如低层机看到1-22层，高层机看到16-40层，中间有几层重叠，后期更好判断轨迹。</p>
+
+      <h3>第二步：先在室内把NVR和硬盘装好</h3>
+      <ol>
+        <li>断电状态下打开NVR外壳。</li>
+        <li>把4TB监控硬盘固定到NVR硬盘位。</li>
+        <li>接好SATA数据线和电源线。</li>
+        <li>合上外壳，NVR接显示器或电视HDMI。</li>
+        <li>NVR接路由器网口。</li>
+        <li>开机初始化，设置强密码。</li>
+        <li>进入硬盘管理，格式化硬盘。</li>
+        <li>设置系统时间，开启NTP网络校时。</li>
+      </ol>
+
+      <h3>第三步：拉网线和防水</h3>
+      <p>PoE方案只有一根网线到摄像机，这根线同时负责供电和视频传输。</p>
+      <ol>
+        <li>从NVR的PoE口拉室外六类网线到摄像机位置。</li>
+        <li>室外部分尽量穿PVC线管或波纹管。</li>
+        <li>摄像机接头必须放进防水接线盒。</li>
+        <li>网线进入防水盒前做一个向下的弯，叫滴水弯，避免雨水顺线流进盒子。</li>
+        <li>水晶头压好后用测线仪测试8芯是否全通。</li>
+        <li>室外长线建议加PoE防雷器，尤其是立杆、楼顶、空旷位置。</li>
+      </ol>
+      <div class="callout bad">
+        <p><strong>不要这样做：</strong>不要把水晶头直接裸露在室外；不要用室内扁网线走室外；不要用Wi-Fi代替PoE；不要用普通插排放在室外给摄像机供电。</p>
+      </div>
+
+      <h3>第四步：固定摄像机</h3>
+      <ol>
+        <li>先把支架固定在墙面、立杆或金属架上。</li>
+        <li>打孔用膨胀螺丝，固定后用手晃一下，不能松。</li>
+        <li>摄像机先不要完全拧死，方便调角度。</li>
+        <li>接上网线，看NVR实时画面。</li>
+        <li>一个人在NVR或手机上看画面，另一个人微调摄像机角度。</li>
+        <li>调好后再锁紧螺丝。</li>
+      </ol>
+      <p>如果要站梯子安装：两个人一起做；梯子要有人扶；不要在雨天、大风天安装；超过2米且没有稳定平台，不建议自己做。</p>
+
+      <h3>第五步：把摄像机加入NVR</h3>
+      <ol>
+        <li>摄像机网线接NVR的PoE口。</li>
+        <li>在NVR里打开“通道管理”。</li>
+        <li>等待自动添加；如果没有自动添加，就手动搜索设备。</li>
+        <li>设定摄像机密码，建议和NVR强密码一致或单独记录。</li>
+        <li>确认每路都能实时预览。</li>
+      </ol>
+
+      <h3>第六步：设置录像</h3>
+      <table>
+        <thead>
+          <tr><th>参数</th><th>建议值</th><th>为什么</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>录像方式</td><td>24小时连续录像 + 高空抛物事件标记</td><td>避免漏掉事件前后过程</td></tr>
+          <tr><td>预录时间</td><td>5-10秒</td><td>能看到物体出现前画面</td></tr>
+          <tr><td>延后录像</td><td>15-30秒</td><td>能看到落地后情况</td></tr>
+          <tr><td>编码</td><td>H.265或H.265+</td><td>节省硬盘</td></tr>
+          <tr><td>分辨率</td><td>摄像机最高分辨率</td><td>取证优先</td></tr>
+          <tr><td>帧率</td><td>20-25fps</td><td>抛物运动更连续</td></tr>
+          <tr><td>码率</td><td>400万建议4096-8192Kbps，800万建议8192-12288Kbps</td><td>码率太低会糊</td></tr>
+          <tr><td>时间水印</td><td>开启</td><td>取证需要准确时间</td></tr>
+        </tbody>
+      </table>
+
+      <h3>第七步：设置高空抛物检测</h3>
+      <ol>
+        <li>打开智能事件或AI事件。</li>
+        <li>选择高空抛物检测。</li>
+        <li>在画面中只框楼体外立面，不要框路面、树、天空、马路。</li>
+        <li>对住户室内窗口做隐私遮蔽，尽量只拍外立面、阳台外沿、空调位。</li>
+        <li>开启轨迹绘制或轨迹记录。</li>
+        <li>开启事件录像、事件截图、手机推送。</li>
+        <li>灵敏度先设中等偏高，例如60-75。</li>
+        <li>夜间误报多就略降灵敏度，白天漏报就略升。</li>
+        <li>把树枝摇晃、路灯、旗帜、雨棚边缘设为屏蔽区域。</li>
+      </ol>
+      <p>重点：检测区域不要贪大。只框你真正要监控的楼面，效果反而更好。</p>
+
+      <h3>第八步：手机远程查看</h3>
+      <p>TP-LINK大致流程：手机安装“TP-LINK安防”App，NVR接入家里路由器，在NVR菜单里开启云服务或远程访问，用App扫码绑定NVR，然后打开实时预览、录像回放、事件消息。海康大致用“海康互联”或“萤石云视频”，大华大致用“DMSS”或“乐橙”。</p>
+      <ul>
+        <li>NVR和摄像机都要强密码；</li>
+        <li>不要用123456、admin123这类密码；</li>
+        <li>App账号开手机验证码；</li>
+        <li>不要把监控分享给无关人员；</li>
+        <li>不要公开视频画面。</li>
+      </ul>
+
+      <h3>第九步：测试</h3>
+      <ol>
+        <li>白天看实时画面，确认1-40层都在覆盖范围内。</li>
+        <li>晚上再看一次，确认路灯、反光、红外没有把画面打白。</li>
+        <li>用一根绳子在楼前安全区域吊一个小物体，从低处缓慢移动，测试轨迹显示和事件录像。</li>
+        <li>或在封闭安全区域，从2-3米高度放下软物体测试，不要影响行人和车辆。</li>
+        <li>在手机App里回放，确认能按事件检索到录像。</li>
+        <li>导出一段录像，确认时间水印、轨迹、画面都在。</li>
+      </ol>
+    </section>
+
+    <section class="section" id="params">
+      <h2>关键参数要看什么，以及为什么</h2>
+      <table>
+        <thead>
+          <tr><th>参数</th><th>建议</th><th>为什么重要</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>是否高空抛物专用</td><td>必须明确支持高空抛物检测、轨迹记录、事件检索</td><td>普通移动侦测只能提示画面动了，不能可靠标记抛物轨迹</td></tr>
+          <tr><td>分辨率</td><td>至少400万，优先800万单机或400万双机</td><td>高层小物体很小，分辨率不够会糊成一个点</td></tr>
+          <tr><td>焦距</td><td>单机建议双目或变焦；双机建议4mm/6mm + 12mm/16mm</td><td>焦距决定看多宽和看多远，40层不能只看普通广角</td></tr>
+          <tr><td>帧率</td><td>20-25fps</td><td>抛物速度快，帧率低会断续，轨迹不连贯</td></tr>
+          <tr><td>快门和夜视</td><td>支持宽动态、低照度、补光，夜间能看清</td><td>夜里物体运动容易拖影，路灯和窗口会造成反差</td></tr>
+          <tr><td>防护等级</td><td>室外至少IP66，优先IP67</td><td>长期风吹雨淋，防水差会坏</td></tr>
+          <tr><td>供电方式</td><td>PoE有线优先</td><td>一根网线供电+传输，稳定，维护简单</td></tr>
+          <tr><td>NVR兼容性</td><td>摄像机和NVR尽量同品牌</td><td>智能事件和轨迹功能跨品牌可能不能完整显示</td></tr>
+          <tr><td>硬盘</td><td>监控专用盘，不用普通移动硬盘</td><td>监控盘适合7x24小时写入</td></tr>
+          <tr><td>隐私遮蔽</td><td>必须支持</td><td>小区场景要避免拍进住户室内</td></tr>
+          <tr><td>手机App</td><td>必须支持实时预览、回放、事件推送</td><td>你需要远程查看和及时发现事件</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section" id="pitfalls">
+      <h2>最容易踩坑的地方</h2>
+      <ol>
+        <li>买成普通家用摄像头。它能看画面，但高空抛物取证能力弱。</li>
+        <li>买成普通枪机。标题里有AI不等于支持高空抛物轨迹。</li>
+        <li>只买一台普通超广角。看得很全，但高层小物体可能太小。</li>
+        <li>用Wi-Fi。室外距离远、墙体多，稳定性不如PoE。</li>
+        <li>只用SD卡。卡坏、容量小、回放检索都不如NVR硬盘。</li>
+        <li>镜头焦距买错。40层不要只买默认2.8mm/4mm就结束。</li>
+        <li>夜间不测试。白天清楚不代表夜里能看清运动物体。</li>
+        <li>没做防水盒。很多室外故障不是摄像机坏，是网线接头进水。</li>
+        <li>没做隐私遮蔽。拍到住户室内会引发隐私纠纷。</li>
+        <li>摄像机和NVR跨品牌混用。实时画面可能能看，但智能事件和轨迹不一定能用。</li>
+      </ol>
+    </section>
+
+    <section class="section" id="privacy">
+      <h2>合规和隐私注意</h2>
+      <p>小区公共区域安装监控，最好先和物业、业委会或相关业主沟通。安装时注意：</p>
+      <ul>
+        <li>只拍楼体外立面和公共区域，避免拍进住户室内；</li>
+        <li>使用隐私遮蔽把窗户内部区域挡住；</li>
+        <li>不要把监控画面公开传播；</li>
+        <li>明确保存周期和查看权限；</li>
+        <li>如果是公共区域固定安装，建议由物业或业委会留档。</li>
+      </ul>
+      <p>高空抛物监控本来是为了公共安全，但如果角度和权限处理不好，也容易变成隐私争议。</p>
+    </section>
+
+    <section class="section" id="final-buy">
+      <h2>最终建议你怎么买</h2>
+      <ol>
+        <li>先问 <code>TL-NIPC58A2P-WBP</code> 的价格和现货。</li>
+        <li>如果这台单价不超过2600-2800元，就买方案二。</li>
+        <li>如果这台超过3000元，改买方案三的大华800万变焦方案，先把一面楼监控起来。</li>
+        <li>如果你更重视取证效果，且能接受多装一个摄像机，就买方案一的TP-LINK双400万分段方案。</li>
+        <li>无论选哪套，都要买NVR、4TB监控硬盘、室外网线、防水盒、支架、线管、防水胶带。</li>
+        <li>先在室内把NVR、硬盘、App都调通。</li>
+        <li>再去现场安装摄像机。</li>
+        <li>白天调角度，晚上再复查一次画面。</li>
+        <li>打开高空抛物检测、轨迹记录、事件推送。</li>
+      </ol>
+    </section>
+
+    <section class="section" id="references">
+      <h2>参考资料</h2>
+      <ul>
+        <li>TP-LINK高空抛物解决方案：<a href="https://security.tp-link.com.cn/service/detail_article_4456.html">https://security.tp-link.com.cn/service/detail_article_4456.html</a></li>
+        <li>TP-LINK高空抛物常见问题和安装说明：<a href="https://security.tp-link.com.cn/m/detail_article_4954.html">https://security.tp-link.com.cn/m/detail_article_4954.html</a></li>
+        <li>TP-LINK <code>TL-NIPC58A2P-WBP</code> 官方产品页：<a href="https://www.tp-link.com.cn/product_2822.html">https://www.tp-link.com.cn/product_2822.html</a></li>
+        <li>TP-LINK <code>TL-NVR6104K-L4P</code> 官方产品页：<a href="https://www.tp-link.com.cn/product_2934.html">https://www.tp-link.com.cn/product_2934.html</a></li>
+        <li>海康威视 <code>DS-2CD3T47WDA-PW</code> 官方产品页：<a href="https://www.hikvision.com/cn/products/pdplist/63504/">https://www.hikvision.com/cn/products/pdplist/63504/</a></li>
+        <li>大华高空抛物机型京东参考页：<a href="https://item.jd.com/10093128551349.html">https://item.jd.com/10093128551349.html</a></li>
+        <li>人民网关于小区监控和隐私边界的报道：<a href="https://society.people.com.cn/n1/2022/0725/c1008-32484218.html">https://society.people.com.cn/n1/2022/0725/c1008-32484218.html</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
